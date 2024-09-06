@@ -6,12 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".RelativeActivity">
 
+    <ImageView
+
+        android:id="@+id/imgIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/quiz"
+        android:layout_alignParentTop="true"/>
     <TextView
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/imgIcon"
+        android:gravity="center"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:text="@string/app_name"
         android:textSize="30sp" />
 
@@ -40,7 +49,8 @@
         android:text="@string/app_name"
         android:textSize="30sp" />
 
-    <TextView
+    <Button
+        android:id="@+id/btnClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
