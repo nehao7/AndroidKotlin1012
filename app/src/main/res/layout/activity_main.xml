@@ -1,64 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/quiz"
+    android:background="#ABD7FA"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        android:gravity="center"
         android:text="MY TEXT"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold|italic"
-        android:textColor="@color/white"
-        android:background="@color/black"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:gravity="center"
 
         />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        android:gravity="center"
         android:text="MY TEXT"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold|italic"
-        android:textColor="@color/white"
-        android:background="@color/black"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:gravity="center"
 
         />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        android:gravity="center"
         android:text="MY TEXT"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold|italic"
-        android:textColor="@color/white"
-        android:background="@color/black"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:gravity="center"
 
         />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        android:gravity="center"
         android:text="MY TEXT"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold|italic"
-        android:textColor="@color/white"
-        android:background="@color/black"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:gravity="center"
 
         />
 
@@ -66,16 +68,29 @@
         android:id="@+id/edtValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter something"
-        android:textStyle="bold|italic"
         android:layout_marginTop="20dp"
-        />
+        android:hint="Enter something"
+        android:textStyle="bold|italic" />
 
-   <Button
-       android:id="@+id/btnNext"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:textStyle="bold"
-       android:text="Next"/>
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ConstraintActivity"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnALERTDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AlertDialogActivity"
+        android:textStyle="bold" />
 
 </LinearLayout>
