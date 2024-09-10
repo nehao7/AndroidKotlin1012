@@ -41,6 +41,13 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        binding.btnSetText.setOnClickListener {
+            if (binding.edtAddvalue.text.isNullOrEmpty()){
+                Toast.makeText(this, "Enter a value", Toast.LENGTH_SHORT).show()
+
+            }else{
+            binding.tvsetValue.text=binding.edtAddvalue.text.toString()}
+        }
 
         binding.btnALERTDialog.setOnClickListener {
            startActivity(Intent(this,AlertDialogActivity::class.java))
