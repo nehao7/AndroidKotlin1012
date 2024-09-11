@@ -2,6 +2,7 @@ package com.o7services.androidkotlin10_12
 
 import android.app.DatePickerDialog
 import android.app.Dialog
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.ViewGroup
@@ -42,10 +43,10 @@ class AlertDialogActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             Snackbar.make(it, "This is a simple Snackbar", Snackbar.LENGTH_LONG).setAction("Undo", {
-                    Toast.makeText(
-                        this, "Toast is invoked from snackbar", Toast.LENGTH_SHORT
-                    ).show()
-                }).show()
+                Toast.makeText(
+                    this, "Toast is invoked from snackbar", Toast.LENGTH_SHORT
+                ).show()
+            }).show()
         }
 
         binding.btnDialog.setOnClickListener {
@@ -91,58 +92,73 @@ class AlertDialogActivity : AppCompatActivity() {
             }
         }
 
-            binding.btnMultipleChoice.setOnClickListener {
-                AlertDialog.Builder(this).apply {
-                    setTitle("This is Alert Dialog")
-                    setMultiChoiceItems(mylist,checklist,{_,which,isChecked->
-                        checklist.set(which,isChecked)
-                        Toast.makeText(
-                            this@AlertDialogActivity,
-                            mylist[which].toString(), Toast.LENGTH_LONG
-                        ).show()
+        binding.btnMultipleChoice.setOnClickListener {
+            AlertDialog.Builder(this).apply {
+                setTitle("This is Alert Dialog")
+                setMultiChoiceItems(mylist, checklist, { _, which, isChecked ->
+                    checklist.set(which, isChecked)
+                    Toast.makeText(
+                        this@AlertDialogActivity,
+                        mylist[which].toString(), Toast.LENGTH_LONG
+                    ).show()
 
-                    })
-                    setNegativeButton("No") { _, _ ->
-                    }
-                    setPositiveButton("yes") { _, _ -> }
-                    setCancelable(true)
-                    show()
+                })
+                setNegativeButton("No") { _, _ ->
                 }
+                setPositiveButton("yes") { _, _ -> }
+                setCancelable(true)
+                show()
             }
+        }
 
-            binding.btnCustomDialog.setOnClickListener {
-                var dialog = Dialog(this)
-                dialog.setContentView(R.layout.custom_layout)
-                var btn=dialog.findViewById<Button>(R.id.btnCancel)
+        binding.btnCustomDialog.setOnClickListener {
+            var dialog = Dialog(this)
+            dialog.setContentView(R.layout.custom_layout)
+            var btn = dialog.findViewById<Button>(R.id.btnCancel)
 
-                dialog.window?.setLayout(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                )
-                dialog.show()
-                btn.setOnClickListener{
-                    Toast.makeText(this, "btnClick", Toast.LENGTH_SHORT).show()
+            dialog.window?.setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+            )
+            dialog.show()
+            btn.setOnClickListener {
+                Toast.makeText(this, "btnClick", Toast.LENGTH_SHORT).show()
 //                    dialog.dismiss()
-                }
-                dialog.setCancelable(false)
             }
+            dialog.setCancelable(false)
+        }
 
-            binding.btnDatePicker.setOnClickListener {
-                DatePickerDialog(
-                    this,
-                    { _, year, month, dateOfMonth ->
-                        Log.e("date", "picked Date is $year $month $dateOfMonth")
-                        val calendar = Calendar.getInstance()
-                        calendar.set(year, month, dateOfMonth)
-                        var formattedDate = simpleDateFormat.format(calendar.time)
-                        binding.btnDatePicker.setText(formattedDate)
-                    },
-                    Calendar.getInstance().get(Calendar.YEAR),
-                    Calendar.getInstance().get(Calendar.MONTH),
-                    Calendar.getInstance().get(Calendar.DATE),
-                ).show()
-            }
+        binding.btnDatePicker.setOnClickListener {
+            DatePickerDialog(
+                this,
+                { _, year, month, dateOfMonth ->
+                    Log.e("date", "picked Date is $year $month $dateOfMonth")
+                    val calendar = Calendar.getInstance()
+                    calendar.set(year, month, dateOfMonth)
+                    var formattedDate = simpleDateFormat.format(calendar.time)
+                    binding.btnDatePicker.setText(formattedDate)
+                },
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DATE),
+            ).show()
 
         }
 
+        binding.btnTimePicker.setOnClickListener {
+            TimePickerDialog(
+                this,
+                { _, houroftheday, min ->
+                    var cal = Calendar.getInstance()
+                    cal.set(Calendar.HOUR_OF_DAY,houroftheday)
+                    cal.set(Calendar.MINUTE,min)
+                    binding.btnTimePicker.setText(timeFormat.format(cal.time))
+                },
+                Calendar.getInstance().get(Calendar.HOUR_OF_DAY),
+                Calendar.getInstance().get(Calendar.MINUTE),
+                false
+            ).show()
+        }
     }
+
+}
