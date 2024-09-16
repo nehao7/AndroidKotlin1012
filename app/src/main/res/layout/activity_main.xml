@@ -92,4 +92,11 @@
         android:text="AlertDialogActivity"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btnImplicitIntent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Implicit Intent"
+        android:textStyle="bold" />
+
 </LinearLayout>

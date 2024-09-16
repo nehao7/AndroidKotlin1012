@@ -1,0 +1,56 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="1350dp"
+    android:height="2925dp"
+    android:viewportWidth="1350"
+    android:viewportHeight="2925">
+    <path
+        android:fillColor="#a0a4ea"
+        android:name="Rectangle 884"
+        android:pathData="m217 941h916c27.6 0 50 22.4 50 50v1751c0 27.6 -22.4 50 -50 50h-916c-27.6 0 -50 -22.4 -50 -50v-1751c0 -27.6 22.4 -50 50 -50z" />
+    <path
+        android:fillColor="#a0a4ea"
+        android:name="Rectangle 884 copy 3"
+        android:pathData="m217 941h916c27.6 0 50 22.4 50 50v1751c0 27.6 -22.4 50 -50 50h-916c-27.6 0 -50 -22.4 -50 -50v-1751c0 -27.6 22.4 -50 50 -50z" />
+    <path
+        android:fillColor="#472b84"
+        android:strokeColor="#fff"
+        android:strokeWidth="8"
+        android:strokeMiterLimit="100"
+        android:name="Rectangle 2 copy 2"
+        android:pathData="m217 2468h914c16.6 0 30 13.4 30 30v193c0 16.6 -13.4 30 -30 30h-914c-16.6 0 -30 -13.4 -30 -30v-193c0 -16.6 13.4 -30 30 -30z" />
+    <path
+        android:fillColor="#472b84"
+        android:strokeColor="#fff"
+        android:strokeWidth="8"
+        android:strokeMiterLimit="100"
+        android:name="Rectangle 2 copy"
+        android:pathData="m804 2188.6h327c16.6 0 30 13.4 30 30v153.8c0 16.6 -13.4 30 -30 30h-327c-16.6 0 -30 -13.4 -30 -30v-153.8c0 -16.6 13.4 -30 30 -30z" />
+    <path
+        android:fillColor="#472b84"
+        android:strokeColor="#fff"
+        android:strokeWidth="8"
+        android:strokeMiterLimit="100"
+        android:name="Rectangle 2 copy"
+        android:pathData="m804 1953.6h327c16.6 0 30 13.4 30 30v153.8c0 16.6 -13.4 30 -30 30h-327c-16.6 0 -30 -13.4 -30 -30v-153.8c0 -16.6 13.4 -30 30 -30z" />
+    <path
+        android:fillColor="#472b84"
+        android:strokeColor="#fff"
+        android:strokeWidth="8"
+        android:strokeMiterLimit="100"
+        android:name="Rectangle 2 copy"
+        android:pathData="m804 1362.2h327c16.6 0 30 13.4 30 30v510.6c0 16.6 -13.4 30 -30 30h-327c-16.6 0 -30 -13.4 -30 -30v-510.6c0 -16.6 13.4 -30 30 -30z" />
+    <path
+        android:fillColor="#472b84"
+        android:strokeColor="#fff"
+        android:strokeWidth="8"
+        android:strokeMiterLimit="100"
+        android:name="Rectangle 2 copy"
+        android:pathData="m218 1362.4h501c16.6 0 30 13.4 30 30v980.2c0 16.6 -13.4 30 -30 30h-501c-16.6 0 -30 -13.4 -30 -30v-980.2c0 -16.6 13.4 -30 30 -30z" />
+    <path
+        android:fillColor="#fff"
+        android:strokeColor="#000"
+        android:strokeWidth="0"
+        android:strokeMiterLimit="100"
+        android:name="Rectangle 869"
+        android:pathData="m359 1013h632c16.6 0 30 13.4 30 30v224c0 16.6 -13.4 30 -30 30h-632c-16.6 0 -30 -13.4 -30 -30v-224c0 -16.6 13.4 -30 30 -30z" />
+</vector>

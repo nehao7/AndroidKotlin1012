@@ -12,14 +12,16 @@ import androidx.core.view.WindowInsetsCompat
 import com.o7services.androidkotlin10_12.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding:ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     var btn: Button? = null
     var edt: EditText? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Toast.makeText(this, "OnCreate", Toast.LENGTH_SHORT).show()
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -42,15 +44,55 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.btnSetText.setOnClickListener {
-            if (binding.edtAddvalue.text.isNullOrEmpty()){
+            if (binding.edtAddvalue.text.isNullOrEmpty()) {
                 Toast.makeText(this, "Enter a value", Toast.LENGTH_SHORT).show()
 
-            }else{
-            binding.tvsetValue.text=binding.edtAddvalue.text.toString()}
+            } else {
+                binding.tvsetValue.text = binding.edtAddvalue.text.toString()
+            }
         }
 
         binding.btnALERTDialog.setOnClickListener {
-           startActivity(Intent(this,AlertDialogActivity::class.java))
+            startActivity(Intent(this, AlertDialogActivity::class.java))
         }
+        binding.btnImplicitIntent.setOnClickListener {
+            startActivity(Intent(this, ImplicitIntentActivity::class.java))
+        }
+    }
+    override fun onStart() {
+        super.onStart()
+        Toast.makeText(this, "OnStart", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, "OnResume", Toast.LENGTH_SHORT).show()
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this, "OnPause", Toast.LENGTH_SHORT).show()
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(this, "OnStop", Toast.LENGTH_SHORT).show()
+
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Toast.makeText(this, "OnReStart", Toast.LENGTH_SHORT).show()
+
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Toast.makeText(this, "OnDestroy", Toast.LENGTH_SHORT).show()
+
+
     }
 }

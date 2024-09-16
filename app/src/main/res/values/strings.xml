@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidKotlin10-12</string>
+    <string name="open_link">Open Link</string>
+    <string name="call">Call</string>
 </resources>
