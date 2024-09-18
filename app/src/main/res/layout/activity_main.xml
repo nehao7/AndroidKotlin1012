@@ -44,7 +44,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/black"
         android:gravity="center"
-        android:text="Set TEXT"
+        android:text="Data Passing"
         android:textColor="@color/white"
 
         />
@@ -97,6 +97,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Implicit Intent"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnFragmentActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment Base Activity"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnJetpackActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jetpack Activity"
         android:textStyle="bold" />
 
 </LinearLayout>

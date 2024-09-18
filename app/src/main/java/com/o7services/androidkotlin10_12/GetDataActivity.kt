@@ -1,28 +1,28 @@
 package com.o7services.androidkotlin10_12
 
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.o7services.androidkotlin10_12.databinding.ActivityGetDataBinding
 
-class SplashActivity : AppCompatActivity() {
+class GetDataActivity : AppCompatActivity() {
+    lateinit var binding:ActivityGetDataBinding
+    var data=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_splash)
+        binding= ActivityGetDataBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this,MainActivity::class.java))
-            finish()
-
-        },4000)
+        data= intent.getStringExtra("key").toString()
+        Log.e("data", "onCreate: $data", )
+        binding.tvGetdata.text=data
     }
 }

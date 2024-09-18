@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.o7services.androidkotlin10_12.databinding.ActivityMainBinding
+import com.o7services.androidkotlin10_12.jetpacknavigation.JetpackActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -49,6 +50,10 @@ class MainActivity : AppCompatActivity() {
 
             } else {
                 binding.tvsetValue.text = binding.edtAddvalue.text.toString()
+                var value = binding.tvsetValue.text.toString()
+                var intent=Intent(this,GetDataActivity::class.java)
+                intent.putExtra("key",value)
+                startActivity(intent)
             }
         }
 
@@ -57,6 +62,12 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnImplicitIntent.setOnClickListener {
             startActivity(Intent(this, ImplicitIntentActivity::class.java))
+        }
+        binding.btnFragmentActivity.setOnClickListener {
+            startActivity(Intent(this, FragmentBaseActivity::class.java))
+        }
+        binding.btnJetpackActivity.setOnClickListener {
+            startActivity(Intent(this, JetpackActivity::class.java))
         }
     }
     override fun onStart() {
