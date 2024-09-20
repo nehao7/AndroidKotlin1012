@@ -113,4 +113,18 @@
         android:text="Jetpack Activity"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btnListActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List Activity"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnListAdapterActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List Adapter Activity"
+        android:textStyle="bold" />
+
 </LinearLayout>

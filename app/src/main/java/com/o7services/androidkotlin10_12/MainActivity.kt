@@ -11,6 +11,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.o7services.androidkotlin10_12.databinding.ActivityMainBinding
 import com.o7services.androidkotlin10_12.jetpacknavigation.JetpackActivity
+import com.o7services.androidkotlin10_12.listpackage.ListActivity
+import com.o7services.androidkotlin10_12.listpackage.ListBaseAdapterActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -51,8 +53,8 @@ class MainActivity : AppCompatActivity() {
             } else {
                 binding.tvsetValue.text = binding.edtAddvalue.text.toString()
                 var value = binding.tvsetValue.text.toString()
-                var intent=Intent(this,GetDataActivity::class.java)
-                intent.putExtra("key",value)
+                var intent = Intent(this, GetDataActivity::class.java)
+                intent.putExtra("key", value)
                 startActivity(intent)
             }
         }
@@ -69,7 +71,14 @@ class MainActivity : AppCompatActivity() {
         binding.btnJetpackActivity.setOnClickListener {
             startActivity(Intent(this, JetpackActivity::class.java))
         }
+        binding.btnListActivity.setOnClickListener {
+            startActivity(Intent(this, ListActivity::class.java))
+        }
+        binding.btnListAdapterActivity.setOnClickListener {
+            startActivity(Intent(this, ListBaseAdapterActivity::class.java))
+        }
     }
+
     override fun onStart() {
         super.onStart()
         Toast.makeText(this, "OnStart", Toast.LENGTH_SHORT).show()

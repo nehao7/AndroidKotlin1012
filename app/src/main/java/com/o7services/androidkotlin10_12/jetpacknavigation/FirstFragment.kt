@@ -52,7 +52,14 @@ class FirstFragment : Fragment() {
         Toast.makeText(requireContext(), "onViewCreated", Toast.LENGTH_SHORT).show()
 
         binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.secondFragment)
+            if(binding.edt.text.toString().isNullOrEmpty()){
+                Toast.makeText(requireContext(), "enter data first", Toast.LENGTH_SHORT).show()
+
+            }else{
+            var bundle=Bundle()
+            bundle.putString("value",binding.edt.text.toString())
+            findNavController().navigate(R.id.secondFragment,bundle)
+            }
         }
     }
 

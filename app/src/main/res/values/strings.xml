@@ -4,4 +4,10 @@
     <string name="call">Call</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="to_do_items">Todo Items</string>
+    <string name="name">Name</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="roll_no">Roll No</string>
+    <string name="myclass">Class</string>
 </resources>
