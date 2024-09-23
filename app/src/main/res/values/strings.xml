@@ -10,4 +10,5 @@
     <string name="delete">Delete</string>
     <string name="roll_no">Roll No</string>
     <string name="myclass">Class</string>
+    <string name="add">Add</string>
 </resources>

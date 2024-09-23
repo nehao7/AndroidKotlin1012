@@ -13,6 +13,7 @@ import com.o7services.androidkotlin10_12.databinding.ActivityMainBinding
 import com.o7services.androidkotlin10_12.jetpacknavigation.JetpackActivity
 import com.o7services.androidkotlin10_12.listpackage.ListActivity
 import com.o7services.androidkotlin10_12.listpackage.ListBaseAdapterActivity
+import com.o7services.androidkotlin10_12.recyclerpackage.RecyclerActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -76,6 +77,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnListAdapterActivity.setOnClickListener {
             startActivity(Intent(this, ListBaseAdapterActivity::class.java))
+        }
+        binding.btnRecyclerActivity.setOnClickListener {
+            startActivity(Intent(this, RecyclerActivity::class.java))
         }
     }
 

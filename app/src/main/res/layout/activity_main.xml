@@ -126,5 +126,11 @@
         android:layout_height="wrap_content"
         android:text="List Adapter Activity"
         android:textStyle="bold" />
+  <Button
+        android:id="@+id/btnRecyclerActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recycler Activity"
+        android:textStyle="bold" />
 
 </LinearLayout>
