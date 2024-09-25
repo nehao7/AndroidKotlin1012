@@ -81,6 +81,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnRecyclerActivity.setOnClickListener {
             startActivity(Intent(this, RecyclerActivity::class.java))
         }
+        binding.btnSpinnerActivity.setOnClickListener {
+            startActivity(Intent(this, SpinnerActivity::class.java))
+        }
     }
 
     override fun onStart() {

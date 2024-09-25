@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ABD7FA"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ABD7FA"
+        android:orientation="vertical"        >
     <TextView
         android:id="@+id/tvsetValue"
         android:layout_width="match_parent"
@@ -126,11 +129,19 @@
         android:layout_height="wrap_content"
         android:text="List Adapter Activity"
         android:textStyle="bold" />
-  <Button
+
+    <Button
         android:id="@+id/btnRecyclerActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Recycler Activity"
         android:textStyle="bold" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btnSpinnerActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spinner Activity"
+        android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>
