@@ -14,7 +14,8 @@ import com.o7services.androidkotlin10_12.listpackage.Student
 class RecyclerActivity : AppCompatActivity(), RecyclerAdapter.onClick {
     lateinit var binding:ActivityRecyclerBinding
     lateinit var recyclerAdapter: RecyclerAdapter
-    var stuList= arrayListOf<Student>()
+    var stuList= arrayListOf<NotesEntity>()
+    lateinit var notesDatabase: NotesDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,16 +26,23 @@ class RecyclerActivity : AppCompatActivity(), RecyclerAdapter.onClick {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        stuList.add(Student(1,"Rohan","C"))
-        stuList.add(Student(2,"Mohan","C++"))
-        stuList.add(Student(3,"sahil","Java"))
+        notesDatabase=NotesDatabase.getInstance(this)
+//        stuList.add(Student(1,"Rohan","C"))
+//        stuList.add(Student(2,"Mohan","C++"))
+//        stuList.add(Student(3,"sahil","Java"))
+        notesDatabase.notesInterface().insertTodo(NotesEntity(title = "my title", description = "My description"))
+
 
         recyclerAdapter= RecyclerAdapter(stuList,this)
         binding.recycler.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         binding.recycler.adapter=recyclerAdapter
+        getList()
     }
 
     override fun delete(position: Int) {
+        notesDatabase.notesInterface().deleteTodoEntity(stuList[position])
+        getList()
+        recyclerAdapter.notifyDataSetChanged()
         Toast.makeText(this, "delete :${stuList[position]}", Toast.LENGTH_SHORT).show()
     }
 
@@ -44,7 +52,14 @@ class RecyclerActivity : AppCompatActivity(), RecyclerAdapter.onClick {
     }
 
     override fun add(position: Int) {
-        stuList.add(Student(stuList[position].rollNo?.plus(1),"Manav","Python"))
+        notesDatabase.notesInterface().insertTodo(NotesEntity(title = "my new title", description = "My new description"))
+//        stuList.add(Student(stuList[position].rollNo?.plus(1),"Manav","Python"))
+        getList()
         recyclerAdapter.notifyDataSetChanged()
+    }
+
+    private fun getList(){
+        stuList.clear()
+        stuList.addAll(notesDatabase.notesInterface().getList())
     }
 }

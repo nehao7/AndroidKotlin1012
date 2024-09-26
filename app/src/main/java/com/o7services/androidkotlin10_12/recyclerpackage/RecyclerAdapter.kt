@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.o7services.androidkotlin10_12.R
 import com.o7services.androidkotlin10_12.listpackage.Student
 
-class RecyclerAdapter(var array: ArrayList<Student>, var clickInterface: onClick) :
+class RecyclerAdapter(var array: ArrayList<NotesEntity>, var clickInterface: onClick) :
     RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     class ViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
         var name = view.findViewById<TextView>(R.id.tvStuName)
@@ -29,8 +29,8 @@ class RecyclerAdapter(var array: ArrayList<Student>, var clickInterface: onClick
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
         holder.apply {
-            name.setText(array[position].name)
-            roll.setText(array[position].rollNo.toString())
+            name.setText(array[position].title)
+            roll.setText(array[position].id.toString())
             update.setOnClickListener {
                 clickInterface.update(position)
             }
